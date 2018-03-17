@@ -1,4 +1,6 @@
-# home
+# home.widget
+
+![home.widget Screenshot](https://pacocoursey.github.io/img/home.png?raw=true)
 
 Home is an Übersicht widget that updates based on your desktop.
 
@@ -6,21 +8,74 @@ It reads the file path of the desktop image and applies a CSS style to the `<bod
 
 This is the first version and is intended only for personal use at this time.
 
-## setup
+## Getting Started
 
-My three desktops have three different backgrounds. The images are named `pink/red/green.jpg`.
+These instructions will help you install home on your macOS system. Please see the [customization](#customization) section for details on how to make it your own.
 
-When the Übersicht widget refreshes, it reads the path of the background image, determines what color is active, and applies the appropriate CSS style.
+### Prerequisites
 
-## todo
+You'll need [homebrew](https://brew.sh).
+
+Install Übersicht:
+
+```
+$ brew cask install ubersicht
+```
+
+Clone this repository and move it into the Übersicht widgets folder:
+
+```
+$ git clone https://github.com/pacocoursey/home.widget.git
+$ mv home.widget ~/Library/Application\ Support/Ubersicht/widgets/
+```
+
+Ensure Übersicht is running and the widget should appear.
+
+## Customization
+
+Home relies on the names of your desktop images being specific to the theme you want to apply. For example, my three desktop images are named `pink/red/green.jpg`. The widget then reads the filenames, determines what image is active, and adds/removes certain CSS classes to change the style.
+
+You will need to customize a few sections in `home.coffee`. Here's an example for a purple theme:
+
+* Update the if/else statement to reflect the names of your desktop images
+
+```
+if values.desktop.includes "purple"
+  @handlePurple(domEl)
+```
+
+* Create the function and update their names and content
+
+```
+handlePurple: (domEl) ->
+  $(".wrapper").removeClass("red")
+  $(".wrapper").removeClass("pink")
+  $(".wrapper").addClass("purple")
+  $(".theme").text("Purple")
+```
+
+Inside of `styles/base.css`, update the class names and change the hex values for `--fg` and `--bg`:
+
+```
+.wrapper.purple {
+  --bg: #xxxxxx;
+  --fg: #xxxxxx;
+}
+```
+
+## Todo
 
 - Modularize to increase theme update frequency
 - Increase extensibility & customizability
 
-## credits
-
-Things I stole from:
+## Credits
 
 - Block setup: [gawlk's polybar](https://github.com/gawlk/dots)
 - Wallpapers: [gawlk's themes](https://github.com/gawlk/thms) and [unsplash](https://unsplash.com)
 - System information: [supernerd widget](https://github.com/blahsd/supernerd.widget)
+
+#
+
+<p align="center">
+    <a href="http://pacocoursey.com">paco coursey</a>
+</p>
