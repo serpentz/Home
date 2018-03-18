@@ -12,7 +12,7 @@ This is intended only for personal use at this time.
 
 The design of this widget is based on different information "blocks". Each block resides in a separate `.coffee` file. This way each modular block can refresh at different frequencies and it's easier to customize.
 
-The file `theme.coffee` refreshes most quickly because it detects which desktop is active. The less delay on a desktop change, the less delay on the theme switch.
+The file `theme.coffee` refreshes most quickly because it detects which desktop is active. The less delay on a desktop change, the less delay on the theme switch. Theme switches will affect all elements with the `themeable` class.
 
 The file `style.coffee` imports a single base CSS file that affects all blocks of the widget. You can add block-specific customization in the `style:` section of each block.
 
@@ -43,12 +43,12 @@ Ensure Übersicht is running and the widget should appear.
 
 Home relies on the names of your desktop images being specific to the theme you want to apply. For example, my three desktop images are named `pink/red/green.jpg`. The widget then reads the filenames, determines what image is active, and adds/removes certain CSS classes to change the style.
 
-You will need to customize a few sections in `home.coffee`. Here's an example for a purple theme:
+You will need to customize a few sections in `theme.coffee`. Here's an example for a purple theme:
 
 * Update the if/else statement to reflect the names of your desktop images
 
 ```
-if values.desktop.includes "purple"
+if output.includes "purple"
   @handlePurple(domEl)
 ```
 
@@ -56,16 +56,16 @@ if values.desktop.includes "purple"
 
 ```
 handlePurple: (domEl) ->
-  $(".wrapper").removeClass("red")
-  $(".wrapper").removeClass("pink")
-  $(".wrapper").addClass("purple")
+  $(".themeable").removeClass("red")
+  $(".themeable").removeClass("pink")
+  $(".themeable").addClass("purple")
   $(".theme").text("Purple")
 ```
 
 Inside of `styles/base.css`, update the class names and change the hex values for `--fg` and `--bg`:
 
 ```
-.wrapper.purple {
+.themeable.purple {
   --bg: #xxxxxx;
   --fg: #xxxxxx;
 }
