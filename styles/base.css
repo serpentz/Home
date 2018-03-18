@@ -11,17 +11,17 @@
   --block: 60px;
 }
 
-.wrapper.green {
+.themeable.green {
   --bg: #1e2b2a;
   --fg: #af8726;
 }
 
-.wrapper.red {
+.themeable.red {
   --bg: #1b1d13;
   --fg: #C15952;
 }
 
-.wrapper.pink {
+.themeable.pink {
   --bg: #1e413b;
   --fg: #ea999f;
 }

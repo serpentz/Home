@@ -1,12 +1,20 @@
 # home.widget
 
-![home.widget Screenshot](https://pacocoursey.github.io/img/home.png?raw=true)
+![home.widget Rose Screenshot](https://pacocoursey.github.io/img/home.png?raw=true)
 
 Home is an Übersicht widget that updates based on your desktop.
 
 It reads the file path of the desktop image and applies a CSS style to the `<body>` element that changes the colors.
 
-This is the first version and is intended only for personal use at this time.
+This is intended only for personal use at this time.
+
+## Design
+
+The design of this widget is based on different information "blocks". Each block resides in a separate `.coffee` file. This way each modular block can refresh at different frequencies and it's easier to customize.
+
+The file `theme.coffee` refreshes most quickly because it detects which desktop is active. The less delay on a desktop change, the less delay on the theme switch.
+
+The file `style.coffee` imports a single base CSS file that affects all blocks of the widget. You can add block-specific customization in the `style:` section of each block.
 
 ## Getting Started
 
