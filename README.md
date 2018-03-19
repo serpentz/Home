@@ -1,6 +1,6 @@
-# home.widget
+# Home
 
-![home.widget Rose Screenshot](https://pacocoursey.github.io/img/home.png?raw=true)
+![Home Rose Screenshot](https://pacocoursey.github.io/img/home.png?raw=true)
 
 Home is an Übersicht widget that updates based on your desktop.
 
@@ -33,8 +33,8 @@ $ brew cask install ubersicht
 Clone this repository and move it into the Übersicht widgets folder:
 
 ```
-$ git clone https://github.com/pacocoursey/home.widget.git
-$ mv home.widget ~/Library/Application\ Support/Ubersicht/widgets/
+$ git clone https://github.com/pacocoursey/home.git
+$ mv home/ ~/Library/Application\ Support/Ubersicht/widgets/
 ```
 
 Ensure Übersicht is running and the widget should appear.

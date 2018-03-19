@@ -6,5 +6,5 @@ render: (output) -> ""
 
 style:
   """
-  @import url(home.widget/styles/base.css);
+  @import url(home/styles/base.css);
   """
