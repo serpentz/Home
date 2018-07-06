@@ -85,5 +85,5 @@ Inside of `styles/base.css`, update the class names and change the hex values fo
 #
 
 <p align="center">
-    <a href="http://pacocoursey.com">paco coursey</a>
+  <a href="http://paco.sh"><img src="https://raw.githubusercontent.com/pacocoursey/pacocoursey.github.io/master/footer.png" height="300"></a>
 </p>
