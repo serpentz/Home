@@ -81,9 +81,3 @@ Inside of `styles/base.css`, update the class names and change the hex values fo
 - Block setup: [gawlk's polybar](https://github.com/gawlk/dots)
 - Wallpapers: [gawlk's themes](https://github.com/gawlk/thms) and [unsplash](https://unsplash.com)
 - System information: [supernerd widget](https://github.com/blahsd/supernerd.widget)
-
-#
-
-<p align="center">
-  <a href="http://paco.sh"><img src="https://raw.githubusercontent.com/pacocoursey/pacocoursey.github.io/master/footer.png" height="300"></a>
-</p>
